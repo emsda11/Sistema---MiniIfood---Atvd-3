@@ -1,0 +1,129 @@
+{
+  "info": {
+    "name": "Atividade 03 - Mini iFood API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "master",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "123456",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Público - Info",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/sistema/info"
+      }
+    },
+    {
+      "name": "Criar cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Maria Silva\",\n  \"email\": \"maria@email.com\"\n}"
+        },
+        "url": "http://localhost:8080/clientes"
+      }
+    },
+    {
+      "name": "Listar clientes",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/clientes"
+      }
+    },
+    {
+      "name": "Criar restaurante",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Pizza Prime\",\n  \"categoria\": \"Pizza\"\n}"
+        },
+        "url": "http://localhost:8080/restaurantes"
+      }
+    },
+    {
+      "name": "Criar produto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Pizza Calabresa\",\n  \"preco\": 39.9,\n  \"restauranteId\": 1\n}"
+        },
+        "url": "http://localhost:8080/produtos"
+      }
+    },
+    {
+      "name": "Criar pedido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clienteId\": 1,\n  \"status\": \"CRIADO\",\n  \"produtosIds\": [\n    1\n  ]\n}"
+        },
+        "url": "http://localhost:8080/pedidos"
+      }
+    },
+    {
+      "name": "Atualizar produto",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Pizza Calabresa Grande\",\n  \"preco\": 49.9,\n  \"restauranteId\": 1\n}"
+        },
+        "url": "http://localhost:8080/produtos/1"
+      }
+    },
+    {
+      "name": "Excluir pedido",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/pedidos/1"
+      }
+    }
+  ]
+}

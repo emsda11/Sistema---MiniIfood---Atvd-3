@@ -1,0 +1,4 @@
+O domínio escolhido foi um sistema inspirado no iFood, pois permite representar um cenário real 
+de delivery com clientes, restaurantes, produtos e pedidos. 
+Esse domínio favorece a aplicação de regras de segurança por níveis de acesso, 
+com perfis administrativos, gerenciais e de auditoria.

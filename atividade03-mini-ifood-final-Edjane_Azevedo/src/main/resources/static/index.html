@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini iFood - Gestão</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div id="loginBox" class="login">
+    <h2>Login</h2>
+    <input id="loginUser" placeholder="Usuário: master, gerente ou auditor">
+    <input id="loginPass" type="password" placeholder="Senha">
+    <button onclick="fazerLogin()">Entrar</button>
+    <p class="login-info">master / 123456<br>gerente / 123456<br>auditor / 123456</p>
+  </div>
+
+  <main class="container" id="sistema" style="display:none;">
+    <button onclick="logout()" class="btn-sair">Sair</button>
+    <header><h1>Mini iFood</h1><p>Interface para testar a API com Spring Security.</p></header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Cliente</h2><input id="clienteId" type="hidden">
+        <label>Nome</label><input id="clienteNome">
+        <label>Email</label><input id="clienteEmail">
+        <button onclick="criarCliente()">Criar</button>
+        <button onclick="atualizarCliente()">Atualizar</button>
+        <button onclick="listarClientes()">Listar</button>
+      </div>
+
+      <div class="card">
+        <h2>Restaurante</h2><input id="restauranteId" type="hidden">
+        <label>Nome</label><input id="restauranteNome">
+        <label>Categoria</label><input id="restauranteCategoria">
+        <button onclick="criarRestaurante()">Criar</button>
+        <button onclick="atualizarRestaurante()">Atualizar</button>
+        <button onclick="listarRestaurantes()">Listar</button>
+      </div>
+
+      <div class="card">
+        <h2>Produto</h2><input id="produtoId" type="hidden">
+        <label>Nome</label><input id="produtoNome">
+        <label>Preço</label><input id="produtoPreco" type="number" step="0.01">
+        <label>ID Restaurante</label><input id="produtoRestauranteId" type="number">
+        <button onclick="criarProduto()">Criar</button>
+        <button onclick="atualizarProduto()">Atualizar</button>
+        <button onclick="listarProdutos()">Listar</button>
+      </div>
+
+      <div class="card">
+        <h2>Pedido</h2><input id="pedidoId" type="hidden">
+        <label>Nome do cliente</label><input id="pedidoClienteNome">
+        <label>IDs dos produtos</label><input id="pedidoProdutosIds" placeholder="1,2">
+        <label>Status</label><input id="pedidoStatus" value="CRIADO">
+        <button onclick="criarPedido()">Criar</button>
+        <button onclick="atualizarPedido()">Atualizar</button>
+        <button onclick="listarPedidos()">Listar</button>
+      </div>
+    </section>
+
+    <section class="panel"><h2>Resultado</h2><pre id="resultado">Aguardando ação...</pre></section>
+    <section class="panel"><h2>Listagem</h2>
+      <button onclick="listarClientes()">Clientes</button>
+      <button onclick="listarRestaurantes()">Restaurantes</button>
+      <button onclick="listarProdutos()">Produtos</button>
+      <button onclick="listarPedidos()">Pedidos</button>
+      <div id="lista" class="list"></div>
+    </section>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
